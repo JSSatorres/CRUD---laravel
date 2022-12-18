@@ -24,12 +24,13 @@ Route::post('/clients', 'App\Http\Controllers\ClientController@store');
 Route::put('/clients/{client}', 'App\Http\Controllers\ClientController@update');
 Route::delete('/clients/{client}', 'App\Http\Controllers\ClientController@destroy');
 
-Route::get('/services', 'App\Http\Controllers\ServiceController@index');
-Route::get('/services/{service}', 'App\Http\Controllers\ServiceController@show');
-Route::post('/services', 'App\Http\Controllers\ServiceController@store');
-Route::put('/services/{service}', 'App\Http\Controllers\ServiceController@update');
-Route::delete('/services/{service}', 'App\Http\Controllers\ServiceController@destroy');
+Route::get('/services', 'App\Http\Controllers\ServicesController@index');
+Route::get('/services/{services}', 'App\Http\Controllers\ServicesController@show');
+Route::post('/services', 'App\Http\Controllers\ServicesController@store');
+Route::put('/services/{services}', 'App\Http\Controllers\ServicesController@update');
+Route::delete('/services/{services}', 'App\Http\Controllers\ServicesController@destroy');
 
+Route::post('/clients/services', 'App\Http\Controllers\ClientController@attach');
 
 // Route::get('/users', [ApiController::class, '/users']);
 // Route::post('/login', [ApiController::class, '/login']);

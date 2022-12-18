@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Services extends Model
 {
     use HasFactory;
+
+    public function clients()
+    {
+        return $this->belongsToMany(Client::class);
+    }
 }
