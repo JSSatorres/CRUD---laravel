@@ -48,7 +48,7 @@ class ClientController extends Controller
             'client' => $client
         ];
 
-        return response()->json('$data');
+        return response()->json($data);
     }
 
     /**
@@ -59,7 +59,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        return response()->json('$client');
+        return response()->json($client);
     }
 
     /**
@@ -82,7 +82,6 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        $client = new Client;
         $client->name = $request->name;
         $client->email = $request->email;
         $client->phone = $request->phone;
@@ -92,7 +91,7 @@ class ClientController extends Controller
             'message' => 'Client updated succesfully',
             'client' => $client
         ];
-        return response()->json('$data');
+        return response()->json($data);
     }
 
     /**
@@ -108,6 +107,6 @@ class ClientController extends Controller
             'message' => 'Client deleted succesfully',
             'client' => $client
         ];
-        return response()->json('$data');
+        return response()->json($data);
     }
 }
