@@ -109,4 +109,14 @@ class ClientController extends Controller
         ];
         return response()->json($data);
     }
+    public function attach(Request $request)
+    {
+        $client = Client::find($request->client_id);
+        $client->services()->attach($request->services_id);
+        $data = [
+            'message' => 'Service attach succesfully',
+            'client' => $client
+        ];
+        return response()->json($data);
+    }
 }
